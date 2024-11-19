@@ -26,43 +26,41 @@
     }</style>
 
 
-# My C++ Project Blog : The Physic Engine
+# My C++ Project Blog : The Physics Engine
 
 Welcome to my blog! Here you can find my project's executables along with descriptions of what each one does.
 
 ---
 
 ### **First sample - `the planets`**
-This is the first sample of my physic Engine, it shows circles considered as planets with each a mass, radius, position, velocity and acceleration.
+This is the first sample of my Physics Engine. It shows circles considered as planets, each with a mass, radius, position, velocity, and acceleration.
 
-The main interest of this sample is to show the basic physics formula of Newton and making those planets turn around a center that we would consider as a sun. Meaning, there is a certain gravity that is applied on our planets towards the sun and we need to do a simple calculus using that force and the angular velocity to make the planets turn around our sun which is our objective. 
+The main interest of this sample is to demonstrate the basic physics formula of Newton's law, showing how these planets revolve around a center, which we consider as a sun. This means that gravity is applied to the planets towards the sun, and we need to perform a simple calculation using that force and the angular velocity to make the planets orbit the sun, which is our objective.
 
-
-[Download main.exe](Final.zip)
+[Download main.exe](https://materfe.github.io/physic_engine_web/Final.zip)
 
 ---
 
 ### **Second Sample - `the trigger collisions`**
-This second sample is made to show how a trigger collision works. A trigger collision happens when two objects touch each other but doesn't bounce of each other. They typically phase throught each other.
+This second sample is designed to show how a trigger collision works. A trigger collision happens when two objects touch each other but don't bounce off each other; they typically pass through each other.
 
-In here, you will find a window in which some circles are moving and when they are in a trigger collision situation, their colors turn to red until they move apart. 
+In this sample, you'll find a window where some circles are moving, and when they enter a trigger collision situation, their colors turn red until they move apart.
 
-However, due to lack of knowledge, there happens to be a small issue when more than two circles collide with each other, one of those circles will most likely turn back to its original color even if the colliding is still happening.
+However, due to limited knowledge, there's a small issue: when more than two circles collide with each other, one of the circles will most likely return to its original color even if the collision is still occurring.
 
 
-[Download trigger_sample.exe](Final.zip)
+[Download trigger_sample.exe](https://materfe.github.io/physic_engine_web/Final.zip)
 
 ---
 
 ### **Third Sample - `the actual collisions`**
-This third sample is made to show how a normal collision works. A normal collision happens when two objects touch each other and most likely bounce of each other depending on a restitution value. This value can go from 0 where no energy will be kept after the collision and 1 where the entire energy will be kept. For example, in real life, this value never touches 1, it only gets close to it depending on the situation and the two objects taken.
+This third sample is designed to show how a normal collision works. A normal collision occurs when two objects touch each other and most likely bounce off each other, depending on a restitution value. This value can range from 0, where no energy is retained after the collision, to 1, where all the energy is retained. For example, in real life, this value never reaches 1, but only approaches it depending on the situation and the objects involved.
 
-In here, you will find a window in which some circles are moving and with them, another form, that we call an AABB(Axis Aligned Bounding Box) which basically is a rectangle with defined bounces and that doesn't rotate.
+In this sample, you'll find a window where some circles are moving alongside another form called an AABB (Axis-Aligned Bounding Box), which is essentially a rectangle with defined bounces and no rotation.
 
-When two circles or two AABB or one circle and one AABB touches each other, based on their respective masses, they will bounce out of each other and if their masses are too high, they will "slide" to each other instead of bouncing. In the same kind of issue, if their masses are both too low, they will just not acknoledge the collision.
+When two circles, two AABBs, or one circle and one AABB collide, they will bounce off each other based on their respective masses. If their masses are too high, they will "slide" towards each other instead of bouncing. Similarly, if their masses are too low, the collision may not be acknowledged at all.
 
-
-[Download collision.exe](Final.zip)
+[Download collision.exe](https://materfe.github.io/physic_engine_web/Final.zip)
 
 ---
 
