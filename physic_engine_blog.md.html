@@ -1,0 +1,83 @@
+<meta charset="utf-8">
+
+<style>
+ /* Background and text styles */
+    body {
+      margin: 20;
+      padding: 20;
+      background-color: #121212; /* Soft black background */
+      color: #c3aaa5; /* Light gray text for readability */
+      font-family: Arial, sans-serif; /* Clean font for readability */
+    }
+
+    /* Signature styles */
+    .signature {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      font-size: 0.9em;
+      color: #aaaaaa; /* Subtle gray for signature */
+      font-family: Arial, sans-serif;
+    }
+
+    /* Headings customization */
+    h1, h2, h3 {
+      color: #ffffff; /* Pure white for headings */
+    }</style>
+
+
+# My C++ Project Blog : The Physic Engine
+
+Welcome to my blog! Here you can find my project's executables along with descriptions of what each one does.
+
+---
+
+### **First sample - `the planets`**
+This is the first sample of my physic Engine, it shows circles considered as planets with each a mass, radius, position, velocity and acceleration.
+
+The main interest of this sample is to show the basic physics formula of Newton and making those planets turn around a center that we would consider as a sun. Meaning, there is a certain gravity that is applied on our planets towards the sun and we need to do a simple calculus using that force and the angular velocity to make the planets turn around our sun which is our objective. 
+
+
+[Download main.exe](Final.zip)
+
+---
+
+### **Second Sample - `the trigger collisions`**
+This second sample is made to show how a trigger collision works. A trigger collision happens when two objects touch each other but doesn't bounce of each other. They typically phase throught each other.
+
+In here, you will find a window in which some circles are moving and when they are in a trigger collision situation, their colors turn to red until they move apart. 
+
+However, due to lack of knowledge, there happens to be a small issue when more than two circles collide with each other, one of those circles will most likely turn back to its original color even if the colliding is still happening.
+
+
+[Download trigger_sample.exe](Final.zip)
+
+---
+
+### **Third Sample - `the actual collisions`**
+This third sample is made to show how a normal collision works. A normal collision happens when two objects touch each other and most likely bounce of each other depending on a restitution value. This value can go from 0 where no energy will be kept after the collision and 1 where the entire energy will be kept. For example, in real life, this value never touches 1, it only gets close to it depending on the situation and the two objects taken.
+
+In here, you will find a window in which some circles are moving and with them, another form, that we call an AABB(Axis Aligned Bounding Box) which basically is a rectangle with defined bounces and that doesn't rotate.
+
+When two circles or two AABB or one circle and one AABB touches each other, based on their respective masses, they will bounce out of each other and if their masses are too high, they will "slide" to each other instead of bouncing. In the same kind of issue, if their masses are both too low, they will just not acknoledge the collision.
+
+
+[Download collision.exe](Final.zip)
+
+---
+
+[link git-hub](https://github.com/materfe/motor_game_system.git)
+
+
+*Thank you for visiting!*
+<div class="signature">
+  Roux--Da Silva Mathieu - 11.19.2024
+</div>
+
+
+
+
+
+
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
