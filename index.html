@@ -1,74 +1,208 @@
 <meta charset="utf-8">
 
-<style>
- /* Background and text styles */
-    body {
-      margin: 20;
-      padding: 20;
-      background-color: #121212; /* Soft black background */
-      color: #c3aaa5; /* Light gray text for readability */
-      font-family: Arial, sans-serif; /* Clean font for readability */
-    }
+ <style>
+        /* General page styles */
+       body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
 
-    /* Signature styles */
-    .signature {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      font-size: 0.9em;
-      color: #aaaaaa; /* Subtle gray for signature */
-      font-family: Arial, sans-serif;
-    }
+        /* Centered content container */
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: left;
+        }
 
-# My C++ Project Blog : The Physics Engine
+        /* Header styles */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-Welcome to my blog! Here you can find my project's executables along with descriptions of what each one does.
+        header h1 {
+            font-size: 2.5em;
+            color: #444;
+        }
 
----
+        header p {
+            font-size: 1.2em;
+            color: #666;
+        }
 
-### **First sample - `the planets`**
-This is the first sample of my Physics Engine. It shows circles considered as planets, each with a mass, radius, position, velocity, and acceleration.
+        /* Section titles */
+        h2 {
+            font-size: 1.8em;
+            color: #444;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
 
-The main interest of this sample is to demonstrate the basic physics formula of Newton 's law, showing how these planets revolve around a center, which we consider as a sun. This means that gravity is applied to the planets towards the sun, and we need to perform a simple calculation using that force and the angular velocity to make the planets orbit the sun, which is our objective.
+        /* Description lists */
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Button styles for downloads */
+        .btn {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 15px;
+            color: #ffffff;
+            background-color: #007BFF;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer styles */
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 30px;
+        }
+
+	.issue {
+        color: #d9534f; /* Bootstrap-style red */
+        font-weight: bold;
+    	}
+
+</style>
 
 
-[Download main.exe](https://materfe.github.io/physic_engine_web/Final.zip)
 
----
+<div class="container">
+    <header>
+        <h1>My C++ Project Blog: The Physics Engine</h1>
+        <p>Goals of this project</p>
+    </header>
 
-### **Second Sample - `the trigger collisions`**
-This second sample is designed to show how a trigger collision works. A trigger collision happens when two objects touch each other but don't bounce off each other; they typically pass through each other.
+    <p>In this blog, I share various physics engine samples I've developed. Each sample comes with a detailed description about it's purpose and its working proces. At the end of the page comes a downloadable executable. Let's dive in!</p>
 
-In this sample, you'll find a window where some circles are moving, and when they enter a trigger collision situation, their colors turn red until they move apart.
+<header>
+    <h2>First Sample: *The Planets*</h2>
+    <p>Quick introduction to physics</p>
+</header>       
+ 
+	<p>This first sample demonstrates the foundational principles of physics through a simulation of planets orbiting a sun. The movement is driven by **Newton's law of gravitation**, which states:
+    </p>
+    <p class="formula">
+        F = G * (m1 * m2) / r²
+    </p>
+    <p>
+        Where:
+        <ul>
+            <li><b>F</b> is the gravitational force.</li>
+            <li><b>G</b> is the gravitational constant.</li>
+            <li><b>m1</b> and <b>m2</b> are the masses of the two objects.</li>
+            <li><b>r</b> is the distance between the objects.</li>
+        </ul>
+    </p>
 
-However, due to limited knowledge, there's a small issue : when more than two circles collide with each other, one of the circles will most likely return to its original color even if the collision is still occurring.
+<header>
+<p>Explanationof the working process</p>
+</header>
+    <p>
+        Using this formula, the simulation calculates the gravitational pull between the "planets" (circles) and a "sun" (center point). **Note** : in this sample, planets are only attracted to the main point (sun) and not ot each other as well.
+
+The library **SDL2** is used for rendering, handling graphical elements like drawing the planets and their paths. SDL2 enables smooth animations and efficient handling of window creation and event processing. 
+
+To allow such a rendering, basic mathematical operations are applied to compute multiple variables such as acceleration, velocity, and position for each frame, ensuring realistic movement.
+    </p>
+   
+<header>
+<p>Conclusion</p>
+</header>
+
+<p>
+This first sample is an efficient way to show the apllication of fondamental physics through a coded program based on a real life thing like planets and our solar system in general. 
+    </p>
 
 
-[Download trigger_sample.exe](https://materfe.github.io/physic_engine_web/Final.zip)
-
----
-
-### **Third Sample - `the actual collisions`**
-This third sample is designed to show how a normal collision works. A normal collision occurs when two objects touch each other and most likely bounce off each other, depending on a restitution value. This value can range from 0, where no energy is retained after the collision, to 1, where all the energy is retained. For example, in real life, this value never reaches 1, but only approaches it depending on the situation and the objects involved.
-
-In this sample, you'll find a window where some circles are moving alongside another form called an AABB (Axis-Aligned Bounding Box), which is essentially a rectangle with defined bounces and no rotation.
-
-When two circles, two AABBs, or one circle and one AABB collide, they will bounce off each other based on their respective masses. If their masses are too high, they will "slide" towards each other instead of bouncing. Similarly, if their masses are too low, the collision may not be acknowledged at all.
-
-[Download collision.exe](https://materfe.github.io/physic_engine_web/Final.zip)
-
----
-
-[link git-hub](https://github.com/materfe/motor_game_system.git)
 
 
-*Thank you for visiting!*
-<div class="signature">
-  Roux--Da Silva Mathieu - 11.19.2024
+
+<header>
+    <h2>Second Sample: *Trigger Collisions*</h2>
+	<p>Quick description</p>
+</header>
+
+    <p>
+        This second sample explores trigger collisions, where objects such as circles detect contact with each others. In the simulation, moving circles change color to red upon trigger collision.
+</p>
+
+<p class="issue">
+     **However, the sample has a limitation: if multiple objects collide, some detections may fail due to overlapping events**.
+    </p>
+
+   <header>
+<p>Explanation of the working process</p>
+</header>
+    <p>
+In this sample, we have to calculate if two circles are colliding together. To do so, we use a formula such as :
+<p class="formula">
+    d = √((x2 - x1)² + (y2 - y1)²)
+</p>
+
+<p>
+        Where:
+        <ul>
+            <li><b>d</b> is the distance between the two circles.</li>
+            <li><b>x1 and y1</b> are the coordinates of the first circle's center.</li>
+            <li><b>x2 and y2</b> are the coordinates of the second circle's center.</li>
+        </ul>
+</p>
+
+
+After being able to learn and use formulas like this one above, being able to show a trigger collision becomes pretty simple.
+
+This sample requires an implementation of **Colliders**. A distinct part from the body of our shapes that allows to manipulate collision effects thought a **Trigger event**.
+
+Just like the previous sample, this also uses **SDL2** for the graphical rendering.
+            </p>
+
+<header>
+<p>Conclusion</p>
+</header>
+
+<p>
+This second sample is an efficient way to show how trigger collisions works thought a simple example, a basic geometrical formula and an implementation of colliders.
+    </p>
+
+
+
+
+
+    <h2>Third Sample: *Actual Collisions*</h2>
+    <p>
+        Here, I present a sample focusing on realistic collisions. Objects such as circles and Axis-Aligned Bounding Boxes (AABBs) interact based on their mass and a restitution value, determining the "bounciness" of collisions. The simulation showcases elastic and inelastic collisions, sliding interactions, and how mass impacts collision outcomes.
+    </p>
+    <p>
+        This sample bridges theoretical physics and practical simulation, offering a deeper understanding of collision mechanics.
+    </p>
+    <a class="btn" href="https://materfe.github.io/physic_engine_web/Final.zip">Download collision.exe</a>
+
+    <footer>
+        <p>Thank you for visiting!</p>
+        <p><strong>Roux--Da Silva Mathieu</strong> - 11.19.2024</p>
+    </footer>
 </div>
-
-
-
 
 
 
