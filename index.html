@@ -83,6 +83,14 @@
         font-weight: bold;
     	}
 
+	.video-container {
+        text-align: center; /* Center the video horizontally */
+        margin: 20px 0; /* Add vertical spacing above and below */
+        max-width: 800px; /* Optional: Set a max width to limit size */
+        margin-left: auto; /* Center the container horizontally */
+        margin-right: auto;
+    	}
+
 </style>
 
 
@@ -95,10 +103,21 @@
 
     <p>In this blog, I share various physics engine samples I've developed. Each sample comes with a detailed description about it's purpose and its working proces. At the end of the page comes a downloadable executable. Let's dive in!</p>
 
+
+
+
 <header>
     <h2>First Sample: *The Planets*</h2>
     <p>Quick introduction to physics</p>
-</header>       
+</header>    
+
+
+<div class="video-container">
+    <video autoplay loop muted playsinline width="100%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <source src=planets.mp4 type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>   
  
 	<p>This first sample demonstrates the foundational principles of physics through a simulation of planets orbiting a sun. The movement is driven by **Newton's law of gravitation**, which states:
     </p>
