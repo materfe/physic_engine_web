@@ -188,15 +188,81 @@ This second sample is an efficient way to show how trigger collisions works thou
 
 
 
+<header>
+<h2>Third Sample: *Actual Collisions*</h2>
+<p>Quick Introduction</p>
+</header>
+    
+     <p>
+        This final sample showcases **realistic collisions** between objects, including circles and **AABBs** (Axis-Aligned Bounding Boxes). An AABB is a rectangle whose edges are always aligned with the coordinate axes and it also can't rotate, a rotating AABB is called an **OBB** (oriented bounding box).  This makes AABBs a common choice for collision detection in 2D environments.
+    </p>
 
-    <h2>Third Sample: *Actual Collisions*</h2>
-    <p>
-        Here, I present a sample focusing on realistic collisions. Objects such as circles and Axis-Aligned Bounding Boxes (AABBs) interact based on their mass and a restitution value, determining the "bounciness" of collisions. The simulation showcases elastic and inelastic collisions, sliding interactions, and how mass impacts collision outcomes.
+<p class="issue">
+     **However, this sample also has a limitation: if the velocity of the two colliding objects are too high, they pass through each other**.
     </p>
+
+
+<header>
+<p>Explanation of the working process</p>
+</header>
+
     <p>
-        This sample bridges theoretical physics and practical simulation, offering a deeper understanding of collision mechanics.
+There are three steps to this sample : resolve calculations for two circles, then for two AABBs and finally, for one circle and one AABB.        
+</p>
+
+ <p>
+For two circles, the collision detection is similar to the trigger sample but it includes calculations for velocity and mass to determine the post-collision behavior. If one circle is heavier than an other one, it won't be too much affected by the collision.
     </p>
-    <a class="btn" href="https://materfe.github.io/physic_engine_web/Final.zip">Download collision.exe</a>
+
+ <p>
+For two AABBs, the detection for the collision is easier since we know the exact bounds of the shape we choose. All that's left is the calculus of the velocity based on the mass of the two colliding shapes.
+    </p>
+
+<p>
+Here is an example of the used **formula to modify the velocity of our shapes :**
+    </p>
+
+
+<p class="formula">
+    v'_A = [(m_A - y* m_B) * v_A + (1 + y) * m_B * v_B] / (m_A + m_B)
+</p>
+<p>
+    Here’s what each term in the formula represents:
+    <ul>
+        <li><b>v'_A</b>: The final velocity of object A after the collision.</li>
+        <li><b>v_A</b> and <b>v_B</b>: The initial velocities of objects A and B, respectively.</li>
+        <li><b>m_A</b> and <b>m_B</b>: The masses of objects A and B, respectively.</li>
+        <li><b>y</b>: The coefficient of restitution, a value between 0 and 1 that defines how elastic the collision is. The closer this value is to 1, the more energy will be kept after the collision</li>
+    </ul>
+</p>
+
+
+    <p>
+For the collision between one circle and one AABB, we use a little trick : we make an AABB out of the circle's bounds and do the calculation out of this. However, since our real shape is a circle, it needs and implementation that restrains the corners of the made AABB.
+    </p>
+
+    <p>
+Just like before, **SDL2** is used again to render objects and handle frame updates.  
+</p>
+
+<header>
+<p>Conclusion</p>
+</header>
+
+<p>
+This last sample is an efficient way to show how physical collisions works through a simple example, some circles and AABBs to demonstrate some physics formulas and applications.
+</p>
+
+<header>
+        <h1>Final conclusion</h1>
+</header>
+
+<p>
+This Project was an interactive and effecient way to learn basic physics formulas and knowledge on top of C++ programming language knowledge. Due to the remaining issues, i intent to keep working on it and polishing the work done.
+</p>
+
+
+    <a class="btn" href="https://materfe.github.io/physic_engine_web/Final.zip">Download the executables</a>
 
     <footer>
         <p>Thank you for visiting!</p>
